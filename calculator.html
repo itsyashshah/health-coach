@@ -1,0 +1,244 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" > <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Health Coach</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link href='https://fonts.googleapis.com/css?family=Dosis:400,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body ng-app="dietApp" class="PT-CALCULATOR">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav class="navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <div class="titler" href=""><i class="fa fa-leaf"></i>   Health Coach</div>
+            </div>
+          </div>
+        </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        What to eat. Food List
+        <div class="navbar-buttons">
+          <a  href='index.html' class="btn btn-success navbutton " name="button"><i class="fa fa-bars"></i>   The BIG 3</a>
+          <a  href='calculator.html' class="btn btn-success navbutton " name="button"><i class="fa fa-calculator"></i>
+   How much to eat</a>
+          <a  href='foodlist.html' class="btn btn-success navbutton " name="button"><i class="fa fa-shopping-basket"></i>   What to eat</a>
+          <a  href='when.html' class="btn btn-success navbutton " name="button"><i class="fa fa-clock-o"></i>   When to eat</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+      <div ng-controller="macroCtrl" class="container calculatorBlock hide" >
+
+        <div class="row well calculatorWell ">
+            <div class="col-sm-12">
+
+              <div class="col-sm-4  form-group">
+                <label class="calculatorLabel">UNITS</label>
+                <div class="">
+                  <label class="calculatorLabel">
+                    <input type="radio" ng-model="units" value="imperial" >
+                    US&nbsp&nbsp&nbsp&nbsp[Feet, Inches, Pounds]
+                  </label><br>
+                  <label class="calculatorLabel">
+                    <input type="radio" ng-model="units" value="metric" >
+                    Metric&nbsp&nbsp&nbsp&nbsp[CM, KG]
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-sm-2 form-group">
+                <label class="calculatorLabel">SEX</label>
+                <div class="">
+                  <label class="calculatorLabel">
+                    <input type="radio" ng-model="user.sex" value="male" >
+                    Male
+                  </label><br>
+                  <label class="calculatorLabel">
+                    <input type="radio" ng-model="user.sex" value="female" >
+                    Female
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm-6  alert alertBlue calculatorDescription">
+                You need calories from each of the <b>BIG 3</b> macronutrients each day, find out how much of each you need!
+              </div>
+            </div>
+
+
+            <div class="imperial animated fadeIn" ng-show="units == 'imperial'">
+              <div class="col-sm-3 form-group">
+                <label class="calculatorLabel">HEIGHT</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="user_height" ng-model="user.heightFT" >
+                  <span class="input-group-addon">ft</span>
+                  <input type="text" class="form-control" id="user_heightFT" ng-model="user.heightIN" >
+                  <span class="input-group-addon">in</span>
+                </div>
+              </div>
+              <div class="col-sm-2 form-group">
+                <label class="calculatorLabel">WEIGHT</label>
+                <div class="input-group">
+                  <input type="text" class="form-control"  id="user_weightLB" ng-model="user.weightLB" >
+                  <span class="input-group-addon">lb</span>
+                </div>
+              </div>
+            </div>
+
+          <div class="metric animated fadeIn" ng-show="units == 'metric'">
+            <div class="col-sm-3 form-group">
+              <label class="calculatorLabel">HEIGHT</label>
+               <div class="input-group">
+                  <input type="text" class="form-control" id="user_height" ng-model="user.heightMetric" >
+                  <span class="input-group-addon">cm</span>
+               </div>
+            </div>
+            <div class="col-sm-2 form-group">
+              <label class="calculatorLabel">WEIGHT</label>
+               <div class="input-group">
+                  <input type="text" class="form-control"  id="user_weight" ng-model="user.weightMetric" >
+                  <span class="input-group-addon">kg</span>
+               </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2 form-group ">
+            <label class="calculatorLabel">AGE</label>
+            <input type="text" class="form-control" id="user_age" ng-model="user.age" >
+          </div>
+
+          <div class="col-sm-5">
+            <label class="calculatorLabel">Activity Level</label>
+            <select name="" id="" class="form-control" ng-model="user.activityLevel" >
+              <option ng-repeat="activityLevel in activityLevels" value="{{activityLevel.value}}">{{activityLevel.title}} ({{activityLevel.description}})</option>
+            </select>
+          </div>
+
+           <div class="col-sm-12">
+             <p class="calculatorLabel kcal-flash" ng-show="units == 'imperial'">
+               Basic Metabolic Rate: &nbsp; </b>&nbsp; {{ getMetaRate()}}
+             </p>
+             <p class="calculatorLabel kcal-flash" ng-show="units == 'metric'">
+               Basic Metabolic Rate: &nbsp; </b>&nbsp; {{ getMetaRateMetric()}}
+             </p>
+           </div>
+           <div class="">
+              <span type="button" name="button" ng-click="{{updateNutrition()}}{{updateNutritionMetric()}}"></span>
+           </div>
+
+        <div class="row">
+            <div class="col-sm-12 animated fadeIn" ng-show="units == 'imperial'" ng-animate="'box'">
+              <div class="col-sm-4" ng-repeat="goal in goals">
+                <table class="table table-bordered " >
+                    <thead class="{{ goal.color }} calculatorLabel">
+                        <th>{{goal.title}}</th>
+                        <th>
+
+                        </th>
+                    </thead>
+                    <tbody class="tableBody calculatorLabel">
+                        <tr>
+                            <td>Calories:</td>
+                            <td>{{goal.calories | number:0}}</td>
+                        </tr>
+                        <tr>
+                            <td>Protein:</td>
+                            <td>{{goal.protein | number:0}}g</td>
+                        </tr>
+                        <tr>
+                            <td>Fats:</td>
+                            <td>{{goal.fats | number:0}}g</td>
+                        </tr>
+                        <tr>
+                            <td>Carbs:</td>
+                            <td>{{goal.carbs | number:0}}g</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+
+            </div>
+            <div class="col-sm-12 animated fadeIn" ng-show="units == 'metric'" ng-animate="'box'">
+              <div class="col-sm-4" ng-repeat="goal in goalsMetric">
+                <table class="table table-bordered " >
+                    <thead class="{{ goal.color }} calculatorLabel">
+                        <th>{{goal.title}}</th>
+                        <th>
+                        </th>
+                    </thead>
+                    <tbody class="tableBody calculatorLabel">
+                        <tr>
+                            <td>Calories:</td>
+                            <td>{{goal.calories | number:0}}</td>
+                        </tr>
+                        <tr>
+                            <td>Protein:</td>
+                            <td>{{goal.protein | number:0}}g</td>
+                        </tr>
+                        <tr>
+                            <td>Fats:</td>
+                            <td>{{goal.fats | number:0}}g</td>
+                        </tr>
+                        <tr>
+                            <td>Carbs:</td>
+                            <td>{{goal.carbs | number:0}}g</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+</div>
+
+
+      <footer>
+
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/calculator.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

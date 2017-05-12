@@ -1,0 +1,223 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+   html {
+        overflow: -moz-scrollbars-vertical;
+        overflow: scroll;
+   }
+
+.alertBlue {
+  border: thin solid black;
+  font-size: 120%;
+  background: #ECEFF1;
+  color: #424242;
+  left: -5px;
+  font-family: 'Dosis', sans-serif;
+
+}
+
+a:hover {
+  color: #1B5E20;
+  text-decoration: none;
+}
+
+.calculatorWell {
+  background: #ECEFF1;
+}
+
+.navbutton {
+  margin-top: 5px;
+  background: none;
+  border-color: white;
+  border-width: 1px;
+  margin-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+  width: 150px;
+}
+
+.navbutton:hover {
+  background: #C62828;
+  border: thin solid #B71C1C;
+}
+
+.circle {
+  margin: 20px;
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+  background: #2196F3;
+  text-align: center;
+  line-height: 250px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 1px 3px 3px #bdbdbd;
+}
+
+.circleSmall {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 300px;
+  background: #0DFF8C;
+  text-align: center;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.facts {
+  margin-top: 40px;
+  list-style: square;
+  font-size: 16px;
+  line-height: 28px;
+  padding-left: 50px;
+}
+
+.calculatorDescription {
+  font-size: 28px;
+}
+
+.navbar {
+  z-index: 9999;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bolder;
+  background: #4CAF50;
+  color: white;
+  box-shadow: 1px 1px 2px #37474F;
+  border-bottom: none;
+}
+
+.navbar-buttons {
+  margin-top: 10px;
+}
+
+.jumbotron {
+  z-index: 9999;
+  background: #EF5350;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  box-shadow: 1px 1px 2px #37474F;
+
+  line-height: 28px;
+  font-size: 28px;
+    font-weight: bold;
+
+}
+
+.querySelector {
+  position: fixed;
+  top: 30%;
+  left: 0;
+}
+
+.selector li {
+  list-style: none;
+
+}
+
+.calculatorLabel {
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  letter-spacing: .02px;
+  font-weight: normal;
+}
+
+.titler {
+  position: relative;
+  top: 3px;
+  left: 10px;
+  font-size: 200%;
+  text-decoration: none;
+  color: white;
+}
+
+.tableBody {
+  background: white;
+}
+
+.gainColor {
+  background: #E57373;
+}
+
+.lossColor {
+background: #81C784;
+}
+
+.maintainColor {
+background: #64B5F6;
+}
+
+.type {
+  color: #263238;
+}
+
+.sortTitles a {
+  color: #EF5350;
+}
+
+.Meat {
+  background: #EF5350;
+}
+
+.Poultry {
+  background: #E57373;
+}
+
+.Beans {
+  background: #DCE775;
+}
+
+.Greens {
+  background: #81C784;
+}
+
+.Fish {
+  background: #F48FB1;
+}
+
+.Whole {
+  background: #FFB74D;
+}
+
+.Dairy {
+  background: #4DB6AC;
+}
+
+.Fruit {
+  background: #7986CB;
+}
+
+.Vegetable {
+  background: #AED581;
+}
+
+.Seeds {
+  background: #FFB74D;
+}
+
+.Berries {
+  background: #42A5F5;
+}
+
+.Nuts {
+  background: #FFD54F;
+}
+
+.Egg {
+  background: #A1887F;
+}
+
+.Oil {
+  background: #FF7043;
+}
