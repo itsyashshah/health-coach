@@ -1,2 +1,2 @@
-# health-coach
-your personal diet consultant
+# Health-Coach
+Your personal diet consultant
