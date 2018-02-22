@@ -7,6 +7,6 @@ Health Coach gives you detail informaion regarding how to manage your diet in yo
 
 ### Technology Used
 
-Javascript (Angular JS)
-HTML
-CSS
+1. Javascript (Angular JS)
+2. HTML
+3. CSS
