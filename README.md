@@ -1,7 +1,7 @@
 # Health Coach
 > gives you a diet chart suggestion according to your body mass index (Bmi)
 
-Health Coach gives you detail informaion regarding how to manage your diet in your rountine life to stay fit and healthy it calculates your bmi and gives you the way to live fit.
+Health Coach gives you detail information regarding how to manage your diet in your routine life to stay fit and healthy it calculates your BMI and gives you the way to live fit.
 
 
 
